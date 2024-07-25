@@ -1,19 +1,16 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import {StatusBar} from 'expo-status-bar';
+import {StyleSheet, View} from 'react-native';
 import {Provider} from 'react-redux';
 import {store} from './src/redux/slices/store';
 
-// Import your main component here, for example:
-// import MainComponent from './src/components/MainComponent';
-
-function App(): React.JSX.Element {
+export default function App() {
   return (
     <Provider store={store}>
-      <SafeAreaView style={styles.container}>
-        <StatusBar barStyle="dark-content" />
-        {/* Add your main component here */}
-        {/* <MainComponent /> */}
-      </SafeAreaView>
+      <View style={styles.container}>
+        {/* Your app content here */}
+        <StatusBar style="auto" />
+      </View>
     </Provider>
   );
 }
@@ -21,7 +18,8 @@ function App(): React.JSX.Element {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
-
-export default App;
